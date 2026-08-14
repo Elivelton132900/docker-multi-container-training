@@ -6,9 +6,18 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 
+
+
+// ERRO DE CORS
+const cors = require('cors')
+
+
 const Goal = require('./models/goal');
 
 const app = express();
+app.use(cors())
+app.use(express.json());
+
 
 const accessLogStream = fs.createWriteStream(
   path.join(__dirname, 'logs', 'access.log'),
@@ -84,7 +93,7 @@ app.delete('/goals/:id', async (req, res) => {
 });
 
 mongoose.connect(
-  'mongodb://localhost:27017/course-goals',
+  'mongodb://goals-mongodb:27017/course-goals',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,

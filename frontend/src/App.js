@@ -14,7 +14,7 @@ function App() {
       setIsLoading(true);
 
       try {
-        const response = await fetch('http://localhost/goals');
+        const response = await fetch('https://reimagined-succotash-qr4j7wqpxq39697-80.app.github.dev/goals');
 
         const resData = await response.json();
 
@@ -39,7 +39,7 @@ function App() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://localhost/goals', {
+      const response = await fetch('https://reimagined-succotash-qr4j7wqpxq39697-80.app.github.dev/goals', {
         method: 'POST',
         body: JSON.stringify({
           text: goalText,
@@ -78,7 +78,7 @@ function App() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://localhost/goals/' + goalId, {
+      const response = await fetch('https://reimagined-succotash-qr4j7wqpxq39697-80.app.github.dev/goals/' + goalId, {
         method: 'DELETE',
       });
 
